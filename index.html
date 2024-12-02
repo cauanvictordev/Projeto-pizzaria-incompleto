@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3r1rZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ@KaoGN26/zrn20ImR1DfuLWn007aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Dev Burguer - A melhor hamburgueria dev!</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">Dev Burguer</h1>
+            <span class="address">Rua Dev 10, Campo Grande - MS</span>
+            <div class="opening-hours">Seg a Dom - 18:00 às 22:00</div>
+        </div>
+        <img src="logo.png" alt="Logo" class="logo-primeiro">
+    </header>
+
+    <!-- CARROSSEL -->
+    <div class="carousel">
+        <button class="carousel-btn prev-btn">&#10094;</button>
+        <div class="carousel-images">
+            <img src="carrosel1.jpg" alt="Pizza 1" class="carousel-image">
+            <img src="carrosel2.jpg" alt="Pizza 2" class="carousel-image">
+        </div>
+        <button class="carousel-btn next-btn">&#10095;</button>
+    </div>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="navigation">
+        <ul class="nav-links">
+            <li><a href="#tradicionais"><i class="fas fa-ice-cream"></i> Pizzas Tradicionais</a></li>
+            <li><a href="#gourmet"><i class="fas fa-coffee"></i> Pizzas Gourmet</a></li>
+            <li><a href="#regionais"><i class="fas fa-pizza-slice"></i> Pizzas Regionais</a></li>
+            <li><a href="#doces"><i class="fas fa-hamburger"></i> Pizzas Doces</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- SELECIONAR TAMANHO DA PIZZA -->
+<h1>Pizzas - Escolha o Tamanho</h1>
+<h4>Selecione abaixo o tamanho da sua pizza:</h4>
+<div class="pizza-sizes">
+    <div class="pizza-card">
+        <img src="pizza_icon_1.png" alt="Pizza Pequena">
+        <h3>Pequena</h3>
+        <p>Até 2 Sabores</p>
+        <p>4 Fatias</p>
+        <button onclick="selectPizza(4, 2)">Selecionar</button>
+    </div>
+    <div class="pizza-card">
+        <img src="https://i.imgur.com/LZBsxLY.png" alt="Pizza Média">
+        <h3>Média</h3>
+        <p>Até 3 Sabores</p>
+        <p>6 Fatias</p>
+        <button onclick="selectPizza(6, 3)">Selecionar</button>
+    </div>
+    <div class="pizza-card">
+        <img src="https://i.imgur.com/LZBsxLY.png" alt="Pizza Grande">
+        <h3>Grande</h3>
+        <p>Até 4 Sabores</p>
+        <p>8 Fatias</p>
+        <button onclick="selectPizza(8, 4)">Selecionar</button>
+    </div>
+    <div class="pizza-card">
+        <img src="https://i.imgur.com/LZBsxLY.png" alt="Pizza Família">
+        <h3>Família</h3>
+        <p>Até 4 Sabores</p>
+        <p>12 Fatias</p>
+        <button onclick="selectPizza(12, 4)">Selecionar</button>
+    </div>
+</div>
+
+
+
+
+    <!-- MENU --> 
+     
+    <section class="menu">
+        <h2 class="menu-title">Conheça nosso menu</h2>
+        
+        
+        <h3>Pizzas Tradicionais</h3>
+        <div class="menu-grid">
+            <!-- Pizza Mussarela -->
+            <div class="menu-item">
+                <p class="menu-name">Pizza Mussarela</p>
+                <p class="menu-description">Uma combinação clássica de muçarela derretida e molho de tomate caseiro.</p>
+                <p class="menu-price" data-base-price="39.90">R$ 39,90</p>
+                <button 
+                    class="add-to-cart-btn" 
+                    data-name="Pizza Mussarela" 
+                    data-price="39.90" 
+                    onclick="openCustomPopup('Pizza Mussarela', 39.90)">
+                    Personalizar
+                </button>
+                <img src="Pizza_Mussarela.png" alt="Pizza Mussarela" class="menu-img">
+            </div>
+
+            <!-- Pizza Calabresa -->
+            <div class="menu-item">
+                <p class="menu-name">Pizza Calabresa</p>
+                <p class="menu-description">Fatias generosas de calabresa e cebola caramelizada.</p>
+                <p class="menu-price" data-base-price="41.90">R$ 41,90</p>
+                <button 
+                    class="add-to-cart-btn" 
+                    data-name="Pizza Calabresa" 
+                    data-price="41.90" 
+                    onclick="openCustomPopup('Pizza Calabresa', 41.90)">
+                    Personalizar
+                </button>
+                <img src="Pizza_Calabresa.png" alt="Pizza Calabresa" class="menu-img">
+            </div>
+        </div>
+        
+        <section class="menu-section">
+            <h3 class="menu-subtitle">Pizzas Gourmet</h3>
+            <div class="menu-grid">
+                <!-- Pizza de Camarão -->
+                <div class="menu-item">
+                    <img src="Pizza_Camarao.png" alt="Pizza de Camarão" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Pizza de Camarão</p>
+                        <p class="menu-description">Camarões temperados, muçarela e alho.</p>
+                        <p class="menu-price" data-base-price="55.90">R$ 55,90</p>
+                        <button class="menu-btn add-to-cart-btn" data-name="Pizza de Camarão" data-price="55.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+        
+                <!-- Pizza Quatro Queijos -->
+                <div class="menu-item">
+                    <img src="Pizza_Quatro_Queijos.png" alt="Pizza Quatro Queijos" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Pizza Quatro Queijos</p>
+                        <p class="menu-description">Muçarela, gorgonzola, parmesão e queijo prato.</p>
+                        <p class="menu-price" data-base-price="49.90">R$ 49,90</p>
+                        <button class="menu-btn add-to-cart-btn" data-name="Pizza Quatro Queijos" data-price="49.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+        
+                <!-- Pizza de Calabresa Especial -->
+                <div class="menu-item">
+                    <img src="Pizza_Calabresa.png" alt="Pizza de Calabresa Especial" class="menu-img">
+                    <div class="menu-info">
+                        <p class="menu-name">Pizza de Calabresa Especial</p>
+                        <p class="menu-description">Calabresa defumada, cebola roxa, muçarela e orégano.</p>
+                        <p class="menu-price" data-base-price="48.90">R$ 48,90</p>
+                        <button class="menu-btn add-to-cart-btn" data-name="Pizza de Calabresa Especial" data-price="48.90">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+ 
+
+    <h3>Pizzas Regionais</h3>
+<div class="menu-grid">
+    <!-- Pizza Nordestina -->
+    <div class="menu-item">
+        <p class="menu-name">Pizza Nordestina</p>
+        <p class="menu-description">Carne de sol desfiada, queijo coalho, cebola roxa e manteiga de garrafa.</p>
+        <p class="menu-price" data-base-price="52.90">R$ 52,90</p>
+        <button class="add-to-cart-btn" data-name="Pizza Nordestina" data-price="52.90">
+            <img src="Pizza_Nordestina.png" alt="Pizza Nordestina" class="menu-img">
+        </button>
+    </div>
+    <!-- Pizza Baiana -->
+    <div class="menu-item">
+        <p class="menu-name">Pizza Baiana</p>
+        <p class="menu-description">Calabresa picante, pimenta, cebola e muçarela.</p>
+        <p class="menu-price" data-base-price="50.90">R$ 50,90</p>
+        <button class="add-to-cart-btn" data-name="Pizza Baiana" data-price="50.90">
+            <img src="Pizza_Baiana.png" alt="Pizza Baiana" class="menu-img">
+        </button>
+    </div>
+    <!-- Pizza Sertaneja -->
+    <div class="menu-item">
+        <p class="menu-name">Pizza Sertaneja</p>
+        <p class="menu-description">Frango desfiado, catupiry, milho e orégano.</p>
+        <p class="menu-price" data-base-price="49.90">R$ 49,90</p>
+        <button class="add-to-cart-btn" data-name="Pizza Sertaneja" data-price="49.90">
+            <img src="Pizza_Sertaneja.png" alt="Pizza Sertaneja" class="menu-img">
+        </button>
+    </div>
+</div>
+
+
+<h3>Pizzas Doces</h3>
+<div class="menu-grid">
+    <!-- Pizza de Chocolate -->
+    <div class="menu-item">
+        <p class="menu-name">Pizza de Chocolate</p>
+        <p class="menu-description">Cobertura de chocolate ao leite e granulado.</p>
+        <p class="menu-price" data-base-price="43.90">R$ 43,90</p>
+        <button class="add-to-cart-btn" data-name="Pizza de Chocolate" data-price="43.90">
+            <img src="Pizza_Chocolate.png" alt="Pizza de Chocolate" class="menu-img">
+        </button>
+    </div>
+    <!-- Pizza de Banana -->
+    <div class="menu-item">
+        <p class="menu-name">Pizza de Banana</p>
+        <p class="menu-description">Banana, açúcar, canela e leite condensado.</p>
+        <p class="menu-price" data-base-price="42.90">R$ 42,90</p>
+        <button class="add-to-cart-btn" data-name="Pizza de Banana" data-price="42.90">
+            <img src="Pizza_Banana.png" alt="Pizza de Banana" class="menu-img">
+        </button>
+    </div>
+    <!-- Pizza de Morango com Nutella -->
+    <div class="menu-item">
+        <p class="menu-name">Pizza de Morango com Nutella</p>
+        <p class="menu-description">Nutella, morangos frescos e raspas de chocolate.</p>
+        <p class="menu-price" data-base-price="47.90">R$ 47,90</p>
+        <button class="add-to-cart-btn" data-name="Pizza de Morango com Nutella" data-price="47.90">
+            <img src="Pizza_Morango_Nutella.png" alt="Pizza de Morango com Nutella" class="menu-img">
+        </button>
+        </div>
+    </div>
+</main>
+
+
+
+            <!-- Link para Font Awesome -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+           <!-- Custom Popup -->
+           <div class="custom-popup" id="customPopup">
+            <div class="custom-popup-content">
+                <span class="custom-popup-close" id="closePopup">&times;</span>
+                <h3 class="custom-popup-title">Personalize sua Pizza</h3>
+                <form class="custom-popup-form">
+                    <div class="custom-popup-section">
+                        <h4>Escolha o tamanho:</h4>
+                        <label>
+                            <input type="radio" name="size" value="Pequena" data-max-flavors="2" data-slices="4" checked> Pequena (4 Fatias)
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="Média" data-max-flavors="3" data-slices="6"> Média (6 Fatias)
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="Grande" data-max-flavors="4" data-slices="8"> Grande (8 Fatias)
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="Família" data-max-flavors="4" data-slices="12"> Família (12 Fatias)
+                        </label>
+                    </div>
+                    <div class="custom-popup-section">
+                        <h4>Escolha até <span id="maxFlavors">2</span> sabores:</h4>
+                        <div id="flavorSelection" class="flavor-grid">
+                            <!-- Sabores gerados dinamicamente -->
+                        </div>
+                    </div>
+                    <div class="custom-popup-section">
+                        <h4>Sabores Selecionados:</h4>
+                        <div id="selectedFlavorsList" class="selected-flavors-list">
+                            <!-- Lista dinâmica de sabores selecionados -->
+                        </div>
+                    </div>
+                    <button type="button" class="custom-popup-add-btn" id="addToCartBtn" disabled>Adicionar ao Carrinho</button>
+                </form>
+            </div>
+        </div>
+        
+
+
+    <!-- MODAL CARRINHO -->
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Meu Carrinho</h2>
+            <div id="cart-items"></div>
+            <p>Total: <span id="cart-total">R$ 0,00</span></p>
+            <input type="text" id="customer-name" placeholder="Digite seu nome completo..." required />
+            <input type="text" id="address" placeholder="Digite seu endereço completo..." required />
+            <h3>Forma de Pagamento</h3>
+            <div class="payment-options">
+                <label><input type="radio" name="payment" value="Cartão" checked> Cartão </label>
+                <label><input type="radio" name="payment" value="pix"> Pix </label>
+                <label><input type="radio" name="payment" value="dinheiro"> Dinheiro </label>
+            </div>
+            <div id="pix-info" class="hidden">
+                <p>Chave Pix: <strong id="pix-key">75983178582</strong></p>
+                <button id="copy-pix-btn">Copiar Chave Pix</button>
+            </div>
+
+       <!--   <div id="suggestions">
+                <h3>Sugestões para seu pedido:</h3>
+                <div>
+                    <p>Borda Recheada (R$ 5,00)</p>
+                    <button onclick="addSuggestion('Borda Recheada', 5.00)">Adicionar</button>
+                </div>
+                <div>
+                    <p>Bebida (R$ 8,00)</p>
+                    <button onclick="addSuggestion('Bebida', 8.00)">Adicionar</button>
+                </div>
+                <div>
+                    <p>Queijo Ralado (R$ 2,00)</p>
+                    <button onclick="addSuggestion('Queijo Ralado', 2.00)">Adicionar</button>
+                </div>
+            </div>    -->
+
+
+            <div class="modal-actions">
+                <button id="close-modal-btn">Fechar</button>
+                <button id="checkout-btn">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>        
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <button id="cart-btn">
+            (<span id="cart-count">0</span>) Ver Meu Carrinho
+            <i class="fa fa-cart-plus"></i>
+        </button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
